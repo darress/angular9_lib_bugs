@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MyLibModule } from 'my-lib';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { MyLibModule } from 'my-lib';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     MyLibModule
   ],
   providers: [],
