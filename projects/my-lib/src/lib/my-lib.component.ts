@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
+import { OtherComponent } from './other.component';
 
 @Component({
   selector: 'lib-my-lib',
   template: `
-      <div id="content of testBool">{{testBool}}</div>
-      <div *ngIf="testBool">TEST 1</div>
-      <div *ngIf="testBool === true">TEST 2</div>
-      <div *ngIf="testBool !== false">TEST 3</div>
-      <div *ngIf="!!testBool">TEST 4</div>
-      <div *ngIf="$any(testBool)">TEST 5</div>
-      <div *ngIf="!testBool">TEST NEG</div>
+      <lib-other #other1 [someInput]="other1!.someProp"></lib-other>
+      <lib-other #other2 [someInput]="other2?.someProp"></lib-other>
+      <lib-other #other3 [someInput]="other3 && other3.someProp"></lib-other>
   `,
   styles: []
 })
-export class MyLibComponent{
-
-  public testBool = true;
-
-  constructor() { }
-}
+export class MyLibComponent{}
