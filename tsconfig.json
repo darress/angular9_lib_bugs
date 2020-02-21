@@ -1,11 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "downlevelIteration": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -18,14 +19,6 @@
       "es2016",
       "dom"
     ],
-    "paths": {
-      "my-lib": [
-        "dist/my-lib"
-      ],
-      "my-lib/*": [
-        "dist/my-lib/*"
-      ]
-    }
   },
   "angularCompilerOptions": {
     "enableIvy": true

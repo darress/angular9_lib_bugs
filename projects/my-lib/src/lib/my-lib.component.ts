@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
+import { RecursiveModel } from './recursive.model';
 
 @Component({
   selector: 'lib-my-lib',
   template: `
-      <div id="content of testBool">{{testBool}}</div>
-      <div *ngIf="testBool">TEST 1</div>
-      <div *ngIf="testBool === true">TEST 2</div>
-      <div *ngIf="testBool !== false">TEST 3</div>
-      <div *ngIf="!!testBool">TEST 4</div>
-      <div *ngIf="$any(testBool)">TEST 5</div>
-      <div *ngIf="!testBool">TEST NEG</div>
+    <lib-recursive-list [list]="list"></lib-recursive-list>
   `,
   styles: []
 })
-export class MyLibComponent{
-
-  public testBool = true;
-
-  constructor() { }
+export class MyLibComponent {
+  public list: RecursiveModel[];
+  constructor() {
+    this.list = [
+      new RecursiveModel('parent1',
+        new RecursiveModel('child11'),
+        new RecursiveModel('child12',
+          new RecursiveModel('child121')
+        ),
+        new RecursiveModel('child13')
+      ),
+      new RecursiveModel('parent2'
+      )
+    ]
+  }
 }
+
