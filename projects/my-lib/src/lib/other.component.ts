@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { getSomething } from './my-lib.component';
 
 @Component({
   selector: 'lib-other',
@@ -8,8 +9,5 @@ import { Component, Input } from '@angular/core';
   styles: []
 })
 export class OtherComponent {
-
-  public someProp = true;
-
-  @Input() someInput: boolean;
+  someInput = getSomething();
 }
